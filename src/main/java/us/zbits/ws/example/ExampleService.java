@@ -12,6 +12,6 @@ public class ExampleService {
 
     @GetMapping("/greet/{name}")
     private Mono<String> getGreeting(@PathVariable String name) {
-        return Mono.just("Hello " + name);
+        return Mono.just("Hello my friend " + name);
     }
 }

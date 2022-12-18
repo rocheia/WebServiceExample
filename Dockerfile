@@ -1,15 +1,15 @@
 FROM openjdk:17-jdk-alpine
 
 # Create local account to run the process
-RUN addgroup -S local_group && adduser -S sys_local_app -G local_group
+RUN groupadd --gid 1000 localapp && useradd --uid 1000 --gid 1000 -m localapp
 
 # Create directory to contain the application
 RUN mkdir /app
 # Change ownership to the local account
-RUN chown sys_local_app /app
+RUN chown localapp:localapp /app
 
 # Change to the local user so we do not run as root in the container
-USER sys_local_app:local_group
+USER localapp
 # Change the working directory to /app
 WORKDIR /app
 

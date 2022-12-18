@@ -1,0 +1,24 @@
+{
+	"name": "Dev Env Open JDK 17",
+	"image": "devenv-openjdk17",
+
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			"settings": { 
+				"maven.executable.path": "/usr/bin/mvn"
+			},
+			
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"vscjava.vscode-java-pack"
+			]
+		}
+	},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	"remoteUser": "devuser"
+}
